@@ -16,7 +16,8 @@ public class TestCode {
 		
 		//Animal person = new Person(); 
 		//Person person = new Person( "John" );
-		var person = new Person( "John" );
+		//var person = new Person( "John" );
+		Animal person = new Person( "John" );
 		
 		int allCount = Animal.ALL_COUNT ; 
 		allCount = person.ALL_COUNT ; 

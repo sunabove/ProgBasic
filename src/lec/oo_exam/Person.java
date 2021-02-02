@@ -12,12 +12,15 @@ public class Person extends Animal { // 사람
 		super( name ); // 기본적으로 호출이 됨.  
 	}
 	
-	void sleep(int days) { // 잠을 잔다.
-		super.sleep(days);
+	void sleep(int day) { // 잠을 잔다. // overrding
+		super.sleep(day);
 		
 		System.out.println( "Person sleep" );
 		
 		this.bloodPressure = 90 ; 
+	}
+	
+	void sleep() { // overloaing 
 	}
 	
 	void drink(Beverage beverage) { // Messaging 

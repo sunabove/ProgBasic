@@ -39,6 +39,9 @@ public abstract class Animal { // 동물
 		this.live = false;
 	}
 	
+	abstract void drink(Beverage beverage) ; // 선언만 함.
+	// { } 
+	
 	public String getName() {
 		return name;
 	}
