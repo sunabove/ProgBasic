@@ -10,10 +10,16 @@ public class Person extends Animal { // 사람
 		this.bloodPressure = 90 ; 
 	}
 	
-	void drink() {
-		System.out.println( "drink" );
-		
-		this.bloodPressure += 10;
+	void drink(Beverage beverage) {
+		if( beverage instanceof Sozu) {	
+			System.out.println( "drink Sozu" );
+			
+			this.bloodPressure += 10;
+		}else if( beverage instanceof Beer) {
+			System.out.println( "drink Beer" );
+			
+			this.bloodPressure += 5 ;
+		}
 		
 		if( this.bloodPressure > 130 ) {
 			this.die();
