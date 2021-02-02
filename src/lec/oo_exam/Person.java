@@ -12,6 +12,7 @@ public class Person extends Animal { // 사람
 		super( name ); // 기본적으로 호출이 됨.  
 	}
 	
+	@Override
 	void sleep(int day) { // 잠을 잔다. // overrding
 		super.sleep(day);
 		
