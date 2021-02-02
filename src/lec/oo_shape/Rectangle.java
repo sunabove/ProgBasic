@@ -12,8 +12,7 @@ public class Rectangle extends Shape {
 
 	@Override
 	public void draw() {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub		
 	}
 
 	@Override
