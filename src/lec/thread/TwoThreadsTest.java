@@ -1,4 +1,4 @@
-package thread;
+package lec.thread;
 
 class TwoThreadsTest {
 	public static void main(String[] args) {

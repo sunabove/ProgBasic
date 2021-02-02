@@ -1,4 +1,4 @@
-package thread;
+package lec.thread;
 
 class SimpleThread extends Thread {
 	public SimpleThread(String str) {
