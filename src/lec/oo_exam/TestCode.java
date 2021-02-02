@@ -22,14 +22,15 @@ public class TestCode {
 		person.sleep( 365 );		
 		out.printf( "age = %.1f, blood=%.1f\n", person.age.value, person.bloodPressure );
 		
-		Beverage sozu = new Sozu();
-		person.drink( sozu );		
-		out.printf( "age = %.1f, blood=%.1f\n", person.age.value, person.bloodPressure );
+		for( int i = 0 ; i < 10 ; i ++ ) { 
+			Beverage sozu = new Sozu();
+			person.drink( sozu );		
+			out.printf( "age = %.1f, blood=%.1f\n", person.age.value, person.bloodPressure );
+		}
 		
 		Beverage beer = new Sozu();
 		person.drink( beer );		
-		out.printf( "age = %.1f, blood=%.1f\n", person.age.value, person.bloodPressure );
-		
+		out.printf( "age = %.1f, blood=%.1f\n", person.age.value, person.bloodPressure );		
 	}
 
 }
