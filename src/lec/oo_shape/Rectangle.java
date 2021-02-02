@@ -6,25 +6,36 @@ public class Rectangle extends Shape {
 	double height ;
 	
 	public Rectangle( double width, double height) {
-		this.width = width ;
+		this.width = width;
 		this.height = height; 
 	}
 
 	@Override
 	public void draw() {
-		// TODO Auto-generated method stub		
+		System.out.println( "\nRectangle" );
+		
+		String text = """
+				*********************************************
+				*                                           *
+				*                                           *
+				*                                           *
+				*                                           *
+				*                                           *
+				*                                           *
+				*                                           *
+				*********************************************
+				""";
+		System.out.println( text );
 	}
 
 	@Override
-	public double getArea() {
-		// TODO Auto-generated method stub
-		return 0;
+	public double getArea() {		
+		return width*height;
 	}
 
 	@Override
-	public double getPerimeter() {
-		// TODO Auto-generated method stub
-		return 0;
+	public double getPerimeter() { 
+		return 2*(width +height);
 	}
 
 }
