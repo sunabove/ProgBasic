@@ -6,6 +6,7 @@ public class PatternD {
 		System.out.println( "Hello 성병문" );
 		System.out.println( "Hello 박보람" );
 		System.out.println( "Hello 이동수" );
+		System.out.println( "Hello 홍지수" );
 	}
 
 }
