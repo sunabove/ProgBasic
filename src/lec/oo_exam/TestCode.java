@@ -12,25 +12,25 @@ public class TestCode {
 		
 		//Animal person = new Person(); 
 		//Person person = new Person( "John" );
-		var person = new Person( "John" );
+		var person = new Person( "John" ); 
 		
-		out.printf( "name = %s\n", person.name );
+		out.printf( "name = %s\n", person.getName() );
 		
 		person.birth();		
-		out.printf( "age = %.1f, blood=%.1f\n", person.age.value, person.bloodPressure );
+		out.printf( "age = %.1f, blood=%.1f\n", person.getAge().value, person.bloodPressure );
 		
 		person.sleep( 365 );		
-		out.printf( "age = %.1f, blood=%.1f\n", person.age.value, person.bloodPressure );
+		out.printf( "age = %.1f, blood=%.1f\n", person.getAge().value, person.bloodPressure );
 		
 		for( int i = 0 ; i < 10 ; i ++ ) { 
 			Beverage sozu = new Sozu();
 			person.drink( sozu );		
-			out.printf( "age = %.1f, blood=%.1f\n", person.age.value, person.bloodPressure );
+			out.printf( "age = %.1f, blood=%.1f\n", person.getAge().value, person.bloodPressure );
 		}
 		
 		Beverage beer = new Sozu();
 		person.drink( beer );		
-		out.printf( "age = %.1f, blood=%.1f\n", person.age.value, person.bloodPressure );		
+		out.printf( "age = %.1f, blood=%.1f\n", person.getAge().value, person.bloodPressure );		
 	}
 
 }

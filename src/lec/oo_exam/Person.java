@@ -1,17 +1,15 @@
 package lec.oo_exam;
 
-public class Person extends Animal { // 사람
+public class Person extends Animal { // 사람 
 	
-	String name; // 이름.
+	// 속성
 	
-	Person() { // 생성자, 기본적으로 만들어 짐.
+	public Person() { // 생성자, 기본적으로 만들어 짐.
 		super(); // 기본적으로 호출이 됨.
 	}
 	
-	Person(String name) { // 생성자, 기본적으로 만들어 짐.
-		super(); // 기본적으로 호출이 됨.
-		
-		this.name = name;
+	public Person(String name) { // 생성자, 기본적으로 만들어 짐.
+		super( name ); // 기본적으로 호출이 됨.  
 	}
 	
 	void sleep(int days) { // 잠을 잔다.
