@@ -13,10 +13,10 @@ public class TestCode {
 		Animal person = new Person(); 
 		
 		person.birth();		
-		out.printf( "age = %f\n", person.age.value );
+		out.printf( "age = %f, blood=%f\n", person.age.value, person.bloodPressure );
 		
 		person.sleep();		
-		out.printf( "age = %f\n", person.age.value );
+		out.printf( "age = %f, blood=%f\n", person.age.value, person.bloodPressure );
 		
 	}
 
