@@ -11,7 +11,9 @@ public class TestCode {
 		var out = System.out;
 		
 		//Animal person = new Person(); 
-		Person person = new Person();
+		Person person = new Person( "John" );
+		
+		out.printf( "name = %s\n", person.name );
 		
 		person.birth();		
 		out.printf( "age = %.1f, blood=%.1f\n", person.age.value, person.bloodPressure );

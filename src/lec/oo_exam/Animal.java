@@ -2,6 +2,9 @@ package lec.oo_exam;
 
 public class Animal { // 동물
 	
+	Animal() { // 생성자, 기본적으로 만들어 짐. 
+	}
+	
 	// double age ; 
 	Age age = new Age() ;  // 나이 
 	double bloodPressure = 0 ; // 혈압
