@@ -10,13 +10,17 @@ public class TestCode {
 		
 		var out = System.out;
 		
-		Animal person = new Person(); 
+		//Animal person = new Person(); 
+		Person person = new Person();
 		
 		person.birth();		
-		out.printf( "age = %f, blood=%f\n", person.age.value, person.bloodPressure );
+		out.printf( "age = %f, blood=%.1f\n", person.age.value, person.bloodPressure );
 		
 		person.sleep();		
-		out.printf( "age = %f, blood=%f\n", person.age.value, person.bloodPressure );
+		out.printf( "age = %f, blood=%.1f\n", person.age.value, person.bloodPressure );
+		
+		person.drink();		
+		out.printf( "age = %f, blood=%.1f\n", person.age.value, person.bloodPressure );
 		
 	}
 
