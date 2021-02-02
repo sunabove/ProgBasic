@@ -8,11 +8,20 @@ public class TestCode {
 		
 		//Person person = new Person();
 		
+		Animal animal;
+		// animal = new Animal(); // 에러
+		animal = new Person(); // 하위 클래스로 정의
+		
 		var out = System.out;
 		
 		//Animal person = new Person(); 
 		//Person person = new Person( "John" );
-		var person = new Person( "John" ); 
+		var person = new Person( "John" );
+		
+		int allCount = Animal.ALL_COUNT ; 
+		allCount = person.ALL_COUNT ; 
+		
+		out.printf( "allCount = %d\n", allCount );
 		
 		out.printf( "name = %s\n", person.getName() );
 		

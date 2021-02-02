@@ -1,8 +1,10 @@
 package lec.oo_exam;
 
-public class Animal { // 동물
+public abstract class Animal { // 동물
+	
+	static int ALL_COUNT = 0 ; // 클래스 레벨에서 접근 가능
 
-	private String name; // 이름
+	private String name; // 이름, 객체 레벨에서 접근 가능.
 	
 	// double age ;
 	private Age age = new Age(); // 나이
@@ -10,9 +12,11 @@ public class Animal { // 동물
 	private boolean live = true; // 생존 여부
 
 	public Animal() { // 생성자, 기본적으로 만들어 짐.
+		Animal.ALL_COUNT ++ ;
 	}
 	
 	public Animal(String name) { // 생성자
+		this();
 		this.name = name;
 	}
 
