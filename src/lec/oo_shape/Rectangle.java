@@ -22,7 +22,7 @@ public class Rectangle extends Shape {
 	}
 
 	@Override
-	public double getPeimeter() {
+	public double getPerimeter() {
 		// TODO Auto-generated method stub
 		return 0;
 	}

@@ -8,7 +8,7 @@ public class ShapeTest {
 		Shape [] shapes = { new Triangle( 1, 2 ), new Rectangle( 3, 4 ), new Circle( 5 ) } ; 
 		
 		for( Shape shape : shapes ) {
-			out.println( "".format( "area=%.2f, perimeter=%.2f", shape.getArea(), shape.getPeimeter()));
+			out.println( "".format( "area=%.2f, perimeter=%.2f", shape.getArea(), shape.getPerimeter()));
 			shape.draw();
 		}
 		
