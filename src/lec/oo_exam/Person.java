@@ -3,6 +3,8 @@ package lec.oo_exam;
 public class Person extends Animal { // 사람 
 	
 	void sleep() { // 잠을 잔다.
+		super.sleep();
+		
 		this.bloodPressure = 90 ; 
 	}
 	

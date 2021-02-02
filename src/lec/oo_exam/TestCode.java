@@ -8,9 +8,16 @@ public class TestCode {
 		
 		//Person person = new Person();
 		
-		Animal person = new Person();
+		var out = System.out;
 		
-		Person p2 = new Animal();
+		Animal person = new Person(); 
+		
+		person.birth();		
+		out.printf( "age = %f\n", person.age.value );
+		
+		person.sleep();		
+		out.printf( "age = %f\n", person.age.value );
+		
 	}
 
 }
