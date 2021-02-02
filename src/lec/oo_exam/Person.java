@@ -2,8 +2,8 @@ package lec.oo_exam;
 
 public class Person extends Animal { // 사람 
 	
-	void sleep() { // 잠을 잔다.
-		super.sleep();
+	void sleep(int days) { // 잠을 잔다.
+		super.sleep(days);
 		
 		System.out.println( "Person sleep" );
 		

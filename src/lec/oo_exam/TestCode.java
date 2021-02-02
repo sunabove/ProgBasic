@@ -16,7 +16,7 @@ public class TestCode {
 		person.birth();		
 		out.printf( "age = %f, blood=%.1f\n", person.age.value, person.bloodPressure );
 		
-		person.sleep();		
+		person.sleep( 365 );		
 		out.printf( "age = %f, blood=%.1f\n", person.age.value, person.bloodPressure );
 		
 		person.drink();		

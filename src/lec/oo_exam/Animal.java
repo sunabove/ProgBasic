@@ -14,11 +14,11 @@ public class Animal { // 동물
 		this.live = true ;
 	}
 	
-	void sleep() { // 잠을 잔다.
+	void sleep(int days) { // 잠을 잔다.
 		System.out.println( "sleep" );
 		
 		this.bloodPressure = 50 ; 
-		this.age.value += 1.0/655;
+		this.age.value += days/365.0;
 	}
 	
 	void die() { // 사망한다.
