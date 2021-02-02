@@ -2,7 +2,7 @@ package lec;
 
 public class ExEnum {
 	
-	enum Level { LOW , MEDIUM, HIGH };
+	enum Level { LOW, MEDIUM, HIGH };
 
 	public static void main(String[] args) {
 		 
