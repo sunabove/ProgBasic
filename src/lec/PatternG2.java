@@ -6,9 +6,9 @@ public class PatternG2 {
 	public static void main(String[] args) {
 		var out = System.out; 
 		
-		var lineNo = 11 ; 
-		for (int i = 1; i < lineNo ; i++ ) {
-			int cnt = i < 6 ? i : ( lineNo -i - 1 ) ; 
+		var lineNo = 10 ; 
+		for (int i = 0; i < lineNo ; i++ ) {
+			int cnt = i < 5 ? i + 1 : ( lineNo - i ) ; 
 			
 			var text = "* ".repeat( cnt );
 			
