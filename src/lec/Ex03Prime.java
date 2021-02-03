@@ -7,11 +7,11 @@ public class Ex03Prime {
 	public static void main(String[] args) {
 		System.out.println("Hello, World"); 
 		
-		// primes = [] , íŒŒì�´ì“´ ì½”ë“œ
+		// primes = [], python code
 				
 		//ArrayList<Integer> primes = new ArrayList<>();
 		//ArrayList<Integer> primes = new ArrayList<Integer>();
-		var primes = new ArrayList<Integer>(); // 12, 13 ì¤„ê³¼ ë�™ì�¼
+		var primes = new ArrayList<Integer>(); // 12, 13 줄과 동일 
 		
 		primes.add( 2 );
 		
@@ -21,8 +21,8 @@ public class Ex03Prime {
 			for( int prime : primes ) {
 				if( num % prime == 0 ) {
 					isPrime = false ;
-					// continue; // -- 17 ë²ˆ ì¤„ë¡œ ì�´ë�™
-					break; // ê°€ìž¥ ê°€ê¹Œìš´ ë°˜ë³µë¬¸ì�„ ë¹ ì ¸ ë‚˜ê°„ë‹¤. 24 ì¤„
+					// continue; 
+					break; // 가장 가까운 반복문을 빠져 나감.
 				}
 			}
 			
