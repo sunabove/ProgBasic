@@ -2,9 +2,9 @@ package lec;
 
 public class Ex7Fibonacci {
 	
-	static int fibonacci( int f0, int f1 ) {
-		// 적당히 수정 
-		return f0 + f1;
+	static int fibonacci( int f0 ) {
+		// 적당히 수정
+		return f0;
 	}
 
 	@SuppressWarnings("static-access")
@@ -14,7 +14,7 @@ public class Ex7Fibonacci {
 		int lineNo = 1;
 		int f; 
 		do {
-			f = fibonacci( 1, 2 );
+			f = fibonacci( lineNo );
 			out.println( "".format( "f[%d] = %d", lineNo, f ) );
 			
 			lineNo ++ ;
