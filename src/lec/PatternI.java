@@ -12,11 +12,13 @@ public class PatternI {
 			
 			var text = "* ".repeat( cnt );
 			
-			var leadCnt = 5 - cnt ; 
-			var leading = leadCnt < 1 ? "" : " ".repeat( leadCnt ) ; 
-			var lagging = leading;
+			var leadSpaceCnt = 5 - cnt ; 
+			var leadingSpace = leadSpaceCnt < 1 ? "" : " ".repeat( leadSpaceCnt ) ; 
+			//leadingSpace = "";
+			var laggingSpace = leadingSpace;
+			//laggingSpace = "";
 			
-			text = "".format( "%s%s%s", leading, text, lagging );
+			text = "".format( "%s%s%s", leadingSpace, text, laggingSpace );
 			text = text.repeat( 2 );
 			
 			out.println( text );
