@@ -14,5 +14,6 @@ class SimpleThread extends Thread {
 			}
 		}
 		System.out.println("DONE! " + getName());
+		// 쓰레드가 정상 종료 
 	}
 }
