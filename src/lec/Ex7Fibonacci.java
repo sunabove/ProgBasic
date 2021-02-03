@@ -9,11 +9,11 @@ public class Ex7Fibonacci {
 		int f0 = 1;
 		int f1 = 1;
 		
-		int idx = 1; 
+		int lineNo = 1; 
 		while( f0 <= f1) {
-			out.println( "".format( "f[%d] = %d", idx, f1 ) );
+			out.println( "".format( "f[%d] = %d", lineNo, f1 ) );
 			
-			idx ++ ; 
+			lineNo ++ ; 
 		}
 	}
 
