@@ -2,6 +2,7 @@ package lec;
 
 public class Ex7Fibonacci {
 
+	@SuppressWarnings("static-access")
 	public static void main(String[] args) {
 		var out = System.out;
 		
