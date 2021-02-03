@@ -1,24 +1,23 @@
 package lec;
 
 public class Ex7FibonacciRecursive {
+	
+	static int fibonacci( int n ) {
+		// 적당히 수정
+		if( n <= 2 ) {
+			return 1;
+		}
+		
+		return n + fibonacci( n - 1 );
+	}
 
 	@SuppressWarnings("static-access")
 	public static void main(String[] args) {
 		var out = System.out;
 		
-		int f0 = 1;
-		int f1 = 1;
-		int f;
-		
-		int lineNo = 1; 
-		while( f0 <= f1) {
-			f = f0 + f1 ; 
-			f0 = f1;
-			f1 = f;
-			out.println( "".format( "f[%d] = %d", lineNo, f1 ) );
-			
-			lineNo ++ ; 
-		}
+		int n = 45 ; 
+		int f = fibonacci( n );
+		out.println( "".format( "f[%d] = %d", n, f ) );
 	}
 
 }
