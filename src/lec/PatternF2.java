@@ -8,7 +8,6 @@ public class PatternF2 {
 		
 		for (int i = 5; i > 0; i--) {
 			var text = "*".repeat( i );
-			
 			out.println( text );
 		}
 	}

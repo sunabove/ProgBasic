@@ -8,8 +8,8 @@ public class MyLogger {
 	private final static Logger logger = Logger.getLogger(MyLogger.class.getName());
 
 	public static void main(String[] args) {
-		logger.setLevel( Level.ALL );
- 
+		logger.setLevel( Level.FINEST  );
+		
 		logger.warning("my warning");
 		logger.info("my info");
 		
