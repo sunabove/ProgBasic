@@ -4,7 +4,9 @@ import java.util.ArrayList;
 
 public class LamdaEx1 {
     public static void main(String[] args) {
-    	var line = "*".repeat( 80 );
+    	//var line = "*******************************************************************";
+    	var line = "*".repeat( 40 );    	
+    	
     	var out = System.out;
     	
         var numbers = new ArrayList<Integer>();
