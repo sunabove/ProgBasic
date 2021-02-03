@@ -5,7 +5,7 @@ public class Main implements Runnable {
 	public static void main( String [] args ) {
 		Main runnable = new Main(); // 실행할 코드 
 		
-		Thread thread = new Thread( runnable);
+		Thread thread = new Thread( runnable );
 		thread.start();
 		// 
 		System.out.println( "This code is outside of the thread." );
