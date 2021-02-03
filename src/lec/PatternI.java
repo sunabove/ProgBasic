@@ -16,7 +16,10 @@ public class PatternI {
 			var leading = leadCnt < 1 ? "" : " ".repeat( leadCnt ) ; 
 			var lagging = leading;
 			
-			out.println( "".format( "|%s%s%s|", leading, text, lagging ) );
+			text = "".format( "%s%s%s", leading, text, lagging );
+			text = text.repeat( 2 );
+			
+			out.println( text );
 		}
 	}
 
