@@ -4,11 +4,15 @@ import java.util.Date;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
 
+@ToString
+
 public class EmployeeWithLombok {
+	
 	private String empId;
 	private String firstName;
 	private String lastname;
@@ -21,5 +25,9 @@ public class EmployeeWithLombok {
 		var firstName = e.getFirstName(); 
 		
 		System.out.println( firstName );
+		System.out.println( e.toString() );
+		System.out.println( "" + e.toString() );
+		System.out.println( "" + e );
 	}
+	
 }

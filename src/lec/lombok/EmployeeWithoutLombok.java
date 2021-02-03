@@ -10,6 +10,13 @@ public class EmployeeWithoutLombok {
 	private Date dob;
 	private String phoneNo;
 
+	// toString method
+	@Override
+	public String toString() {
+		return "EmployeeWithoutLombok [empId=" + empId + ", firstName=" + firstName + ", lastname=" + lastname
+				+ ", dob=" + dob + ", phoneNo=" + phoneNo + "]";
+	}
+
 	public String getEmpId() {
 		return empId;
 	}
