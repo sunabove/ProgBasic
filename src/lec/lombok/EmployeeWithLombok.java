@@ -2,21 +2,18 @@ package lec.lombok;
 
 import java.util.Date;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
-@Getter
-@Setter
-
-@ToString
-
+//@Getter
+//@Setter
+//@ToString
+@Data
 @Slf4j
 
 public class EmployeeWithLombok {
 	
-	// log ......
+	// private static final Logger logger = LoggerFactory.getLogger(EmployeeWithLombok.class);
 	
 	private String empId;
 	private String firstName;
@@ -28,6 +25,7 @@ public class EmployeeWithLombok {
 		log.debug( "Hello...." );
 		
 		EmployeeWithLombok e = new EmployeeWithLombok();
+		
 		e.setFirstName( "John" );
 		var firstName = e.getFirstName(); 
 		

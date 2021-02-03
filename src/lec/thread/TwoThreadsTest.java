@@ -17,10 +17,15 @@ class TwoThreadsTest {
 		}
 		// -- Thread 생성 
 		
-		// Thread 시작 
+		// Thread 시작
+		threads.forEach( thread -> { thread.start(); });
+		
+		// Thread 시작
+		/*
 		for( var thread : threads ) {
 			thread.start();
 		}
+		*/
 		
 	}
 }

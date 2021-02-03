@@ -2,8 +2,13 @@ package lec.lombok;
 
 import java.util.Date;
 
-public class EmployeeWithoutLombok {
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+public class EmployeeWithoutLombok {
+	
+	private static final Logger logger = LoggerFactory.getLogger(EmployeeWithoutLombok.class);
+	
 	private String empId;
 	private String firstName;
 	private String lastname;
