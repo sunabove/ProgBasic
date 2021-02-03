@@ -17,6 +17,9 @@ public class EmployeeWithLombok {
 	
 	public static void main( String [] args ) {
 		EmployeeWithLombok e = new EmployeeWithLombok();
+		e.setFirstName( "John" );
 		var firstName = e.getFirstName(); 
+		
+		System.out.println( firstName );
 	}
 }
