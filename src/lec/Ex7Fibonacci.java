@@ -1,24 +1,25 @@
 package lec;
 
 public class Ex7Fibonacci {
+	
+	static int fibonacci( int f0, int f1 ) {
+		// 적당히 수정 
+		return f0 + f1;
+	}
 
 	@SuppressWarnings("static-access")
 	public static void main(String[] args) {
 		var out = System.out;
 		
-		int f0 = 1;
-		int f1 = 1;
-		int f;
-		
-		int lineNo = 1; 
-		while( f0 <= f1) {
-			f = f0 + f1 ; 
-			f0 = f1;
-			f1 = f;
-			out.println( "".format( "f[%d] = %d", lineNo, f1 ) );
+		int lineNo = 1;
+		int f; 
+		do {
+			f = fibonacci( 1, 2 );
+			out.println( "".format( "f[%d] = %d", lineNo, f ) );
 			
-			lineNo ++ ; 
+			lineNo ++ ;
 		}
+		while( f >= 0 );
 	}
 
 }
