@@ -7,7 +7,7 @@ public class Main implements Runnable {
 		
 		Thread thread = new Thread( runnable);
 		thread.start();
-		
+		// 
 		System.out.println( "This code is outside of the thread." );
 	}
 
