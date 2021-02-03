@@ -13,6 +13,6 @@ public class TestJunit1 {
 //		String s = null ;
 //		s.length();
 		
-		assertEquals( str + str , str);
+		assertEquals( str , str);
 	}
 }
