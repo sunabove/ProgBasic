@@ -5,7 +5,10 @@ import java.util.Collections;
 
 public class ArrayListTest {
 	public static void main(String[] args) {
-		var cars = new ArrayList<String>();
+		
+		var cars = new StringList();
+		
+		//var cars = new ArrayList<String>();
 		
 		cars.add("Volvo");
 		cars.add("BMW");
@@ -14,6 +17,11 @@ public class ArrayListTest {
 		
 		cars.set(0, "Opel");
 		//cars.remove(0);
+		
+		" abcd".length();
+		
+		int size = cars.size();
+		size = cars.length();
 		
 		Collections.sort(cars); // Sort cars
 		
