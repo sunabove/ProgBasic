@@ -8,11 +8,11 @@ class MyClientReadWrite {
 		var sout = System.out;
 		
 		sout.println( "Connecting to the server...." );
-		Socket s = new Socket("localhost", 3333);
+		Socket socket = new Socket("localhost", 3333);
 		sout.println( "Connected to the server." );
 		
-		DataInputStream in = new DataInputStream(s.getInputStream());
-		DataOutputStream out = new DataOutputStream(s.getOutputStream());
+		DataInputStream in = new DataInputStream(socket.getInputStream());
+		DataOutputStream out = new DataOutputStream(socket.getOutputStream());
 		BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
 
 		String str = "", str2 = "";
@@ -25,7 +25,7 @@ class MyClientReadWrite {
 		}
 
 		out.close();
-		s.close();
+		socket.close();
 		
 		sout.println( "Good bye!" );
 	}

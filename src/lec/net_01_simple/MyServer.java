@@ -10,11 +10,11 @@ public class MyServer {
 		ServerSocket ss = new ServerSocket(6666);
 		
 		sout.println( "Waiting a client." );		
-		Socket s = ss.accept();// establishes connection
+		Socket socket = ss.accept();// establishes connection
 		
 		sout.println( "A client has been accepted." );
 		
-		DataInputStream in = new DataInputStream(s.getInputStream());
+		DataInputStream in = new DataInputStream(socket.getInputStream());
 		String str = (String) in.readUTF();
 		sout.println("Message received on server = " + str);
 		

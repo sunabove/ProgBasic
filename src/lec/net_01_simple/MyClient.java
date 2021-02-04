@@ -8,10 +8,10 @@ public class MyClient {
 		var sout = System.out; 
 		
 		sout.println( "Connecting to the server...." );
-		Socket s = new Socket("localhost", 6666);
+		Socket socket = new Socket("localhost", 6666);
 		sout.println( "Connected to the server." );
 		
-		DataOutputStream out = new DataOutputStream(s.getOutputStream());
+		DataOutputStream out = new DataOutputStream(socket.getOutputStream());
 		var msg = "Hello...." ;
 		
 		out.writeUTF( msg );
@@ -21,7 +21,7 @@ public class MyClient {
 		out.flush();
 		out.close();
 		
-		s.close();
+		socket.close();
 		
 		sout.println( "Good bye!" );
 	}

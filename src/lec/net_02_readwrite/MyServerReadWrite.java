@@ -7,28 +7,29 @@ class MyServerReadWrite {
 	public static void main(String args[]) throws Exception {
 		var sout = System.out; 
 		
-		ServerSocket ss = new ServerSocket(3333);
+		ServerSocket serverSocket = new ServerSocket(3333);
 		
-		sout.println( "Waiting a client." );	
-		Socket s = ss.accept();
+		sout.println( "Waiting a client ..." );	
+		Socket socket = serverSocket.accept();
 		sout.println( "A client has been accepted." ); 
 		
-		DataInputStream in = new DataInputStream(s.getInputStream());
-		DataOutputStream out = new DataOutputStream(s.getOutputStream());
+		DataInputStream in = new DataInputStream(socket.getInputStream());
+		DataOutputStream out = new DataOutputStream(socket.getOutputStream());
 		BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
 
-		String str = "", str2 = "";
-		while (!str.equals("stop")) {
-			str = in.readUTF();
-			System.out.println("client says: " + str);
-			str2 = console.readLine();
-			out.writeUTF(str2);
+		var strClient = "";
+		var strConsole = "";
+		while (! strClient.equals("stop")) {
+			strClient = in.readUTF();
+			System.out.println("client says: " + strClient);
+			strConsole = console.readLine();
+			out.writeUTF(strConsole);
 			out.flush();
 		}
 		
 		in.close();
-		s.close();
-		ss.close();
+		socket.close();
+		serverSocket.close();
 		
 		sout.println( "Good bye!" );
 	}
