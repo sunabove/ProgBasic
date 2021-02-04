@@ -12,6 +12,7 @@ public class MyClient {
 		sout.println( "Connected to the server." );
 		
 		DataOutputStream out = new DataOutputStream(socket.getOutputStream());
+		
 		var msg = "Hello...." ;
 		
 		out.writeUTF( msg );
