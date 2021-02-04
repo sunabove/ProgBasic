@@ -2,20 +2,20 @@ package lec.collection;
 
 import java.util.Collection;
 
-public class IntegerList extends java.util.ArrayList<Integer>{
+public class EmployeeList extends java.util.ArrayList<Employee>{
 
-	private static final long serialVersionUID = -1546030548451607381L;
+	private static final long serialVersionUID = 7022263835954442542L;
 
 	// 생성자 3개를 만듦.
-	public IntegerList() {
+	public EmployeeList() {
 		super();
 	}
 	
-	public IntegerList(int initialCapacity) {
+	public EmployeeList(int initialCapacity) {
 		super( initialCapacity );		
 	}
 	
-	public IntegerList(Collection<? extends Integer> c) {
+	public EmployeeList(Collection<? extends Employee> c) {
 		super( c );
 	}
 	
