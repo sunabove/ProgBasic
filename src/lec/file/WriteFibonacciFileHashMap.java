@@ -13,12 +13,18 @@ public class WriteFibonacciFileHashMap {
 			return 1;
 		}
 		
+		// 이미 구한 f(n)이 있는 지 체크한다.
 		var f = fibMap.get( n );
 		
 		if( f != null ) {
+			// 이미 구한 f(n)이 있으면, 그 값을 반환한다.
+			
 			return f;
 		} else {
-			f = fibonacci(n - 1) + fibonacci(n - 2);			
+			// 이미 구한 f(n)이 없으면, 재귀함수를 사용하여 구한다.			
+			f = fibonacci(n - 1) + fibonacci(n - 2);	
+			
+			// 구한 f(n) 값을 Map에 등록한다.
 			fibMap.put( n,  f );
 			
 			return f;
