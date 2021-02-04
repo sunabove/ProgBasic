@@ -5,7 +5,7 @@ import java.util.Collections;
 
 public class ArrayListIntegerTest {
 	public static void main(String[] args) {
-		var numbers = new ArrayList<Integer>();
+		var numbers = new IntegerList();
 		
 		numbers.add( 1 );
 		numbers.add( 2 );
