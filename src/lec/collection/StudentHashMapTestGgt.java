@@ -19,11 +19,11 @@ public class StudentHashMapTestGgt {
 		
 		int maxValue = Collections.max(map.keySet());
 		
-		System.out.print(maxValue);
+		System.out.println(maxValue);
 
 		String name = map.get( maxValue );
 
-		System.out.print( "name = " + name );
+		System.out.println( "name = " + name );
 	}
 
 }
