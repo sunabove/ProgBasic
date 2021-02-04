@@ -2,8 +2,12 @@ package lec.file;
 
 import java.io.FileWriter; // Import the FileWriter class
 import java.io.IOException; // Import the IOException class to handle errors
+import java.util.HashMap;
 
 public class WriteFibonacciFile {
+	
+	static HashMap <Integer, Integer> fibMap = new HashMap<Integer, Integer>();
+	
 	static int fibonacci(int n) {
 		// 적당히 수정
 		if (n <= 2) {
@@ -22,7 +26,7 @@ public class WriteFibonacciFile {
 		
 		int f;
 		String text ; 
-		for(int i = 0; i < 10; i++) {
+		for(int i = 0; i < 50; i++) {
 			f = fibonacci( i );
 			text = String.format( "%d, %d\n", i, f );
 			out.print( text );
