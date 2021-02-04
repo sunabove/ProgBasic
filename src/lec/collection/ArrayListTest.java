@@ -5,7 +5,7 @@ import java.util.Collections;
 
 public class ArrayListTest {
 	public static void main(String[] args) {
-		ArrayList<String> cars = new ArrayList<String>();
+		var cars = new ArrayList<String>();
 		
 		cars.add("Volvo");
 		cars.add("BMW");
@@ -17,8 +17,8 @@ public class ArrayListTest {
 		
 		Collections.sort(cars); // Sort cars
 		
-		for (String i : cars) {
-			System.out.println(i);
+		for (var car : cars) {
+			System.out.println( car );
 		}
 	}
 }
