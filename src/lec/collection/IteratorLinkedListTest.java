@@ -1,4 +1,4 @@
-package lec.classes;
+package lec.collection;
 
 import java.util.ArrayList;
 import java.util.Iterator;
