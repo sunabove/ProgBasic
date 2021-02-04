@@ -5,14 +5,14 @@ import java.util.Iterator;
 
 public class IteratorLinkedListTest {
 	public static void main(String[] args) {
-		ArrayList<Integer> numbers = new ArrayList<Integer>();
+		var numbers = new ArrayList<Integer>();
 		
 		numbers.add(12);
 		numbers.add(8); 
 		
 		System.out.println( "*".repeat(40));
 		
-		Iterator<Integer> it = numbers.iterator();
+		var it = numbers.iterator();
 		while (it.hasNext()) {
 			Integer i = it.next();
 			System.out.println( i );
