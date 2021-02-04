@@ -15,6 +15,8 @@ public class StudentHashMapTest {
 		
 		System.out.println( "*".repeat(40));
 		
+		var bigNo = -1 ;  
+		
 		// 가장 높은 번호의 키를 구한다.
 		for ( var key : noNameMap.keySet()) { 
 			System.out.println("No = " + key); 
