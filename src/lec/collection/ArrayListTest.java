@@ -12,7 +12,7 @@ public class ArrayListTest {
 		cars.add("Mazda");
 		
 		cars.set(0, "Opel");
-		cars.remove(0);
+		//cars.remove(0);
 		
 		Collections.sort(cars); // Sort cars
 		for (String i : cars) {
