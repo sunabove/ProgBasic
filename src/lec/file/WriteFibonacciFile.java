@@ -1,7 +1,7 @@
 package lec.file;
 
-import java.io.FileWriter; // Import the FileWriter class
-import java.io.IOException; // Import the IOException class to handle errors
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.HashMap;
 
 public class WriteFibonacciFile {
@@ -9,7 +9,6 @@ public class WriteFibonacciFile {
 	static HashMap <Integer, Integer> fibMap = new HashMap<Integer, Integer>();
 	
 	static int fibonacci(int n) {
-		// 적당히 수정
 		if (n <= 2) {
 			return 1;
 		}
@@ -20,7 +19,6 @@ public class WriteFibonacciFile {
 	public static void main(String[] args) throws Exception {
 		var out = System.out;
 		FileWriter fileWriter = new FileWriter("c:\\temp\\fibonacci.csv");
-
 		
 		out.println( "Hello.." );
 		
