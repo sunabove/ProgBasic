@@ -34,8 +34,8 @@ public class Employee {
 		emps.add(e);
 
 		for (var emp : emps) { 
-			System.out.println( "firstName = " + e.getFirstName() ); 
-			System.out.println( "emp = " + e);
+			System.out.println( "firstName = " + emp.getFirstName() ); 
+			System.out.println( "emp = " + emp);
 
 			log.debug("I am here!");
 		}
