@@ -6,6 +6,7 @@ import java.util.Collections;
 public class ArrayListTest {
 	public static void main(String[] args) {
 		ArrayList<String> cars = new ArrayList<String>();
+		
 		cars.add("Volvo");
 		cars.add("BMW");
 		cars.add("Ford");
@@ -15,6 +16,7 @@ public class ArrayListTest {
 		//cars.remove(0);
 		
 		Collections.sort(cars); // Sort cars
+		
 		for (String i : cars) {
 			System.out.println(i);
 		}
