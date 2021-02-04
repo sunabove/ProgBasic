@@ -6,8 +6,6 @@ import java.util.HashMap;
 
 public class WriteFibonacciFile {
 	
-	static HashMap <Integer, Integer> fibMap = new HashMap<Integer, Integer>();
-	
 	static int fibonacci(int n) {
 		if (n <= 2) {
 			return 1;
