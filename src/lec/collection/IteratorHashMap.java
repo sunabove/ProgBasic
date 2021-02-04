@@ -14,8 +14,8 @@ public class IteratorHashMap {
 		map.put( 4,  8 );
 		
 		System.out.println( "*".repeat(40));
+		
 		Iterator<Map.Entry<Integer, Integer>> entries = map.entrySet().iterator();
-
 		while (entries.hasNext()) {
 			Map.Entry<Integer, Integer> entry = entries.next();
 			System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());
@@ -25,6 +25,7 @@ public class IteratorHashMap {
 		// Iterating over keys only
 		for (Integer key : map.keySet()) {
 			System.out.println("Key = " + key);
+			System.out.println("Value = " + map.get(key));
 		}
 
 		System.out.println( "*".repeat(40));
