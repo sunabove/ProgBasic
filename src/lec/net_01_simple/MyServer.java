@@ -7,10 +7,10 @@ public class MyServer {
 	public static void main(String[] args) throws Exception {
 		var sout = System.out; 
 		
-		ServerSocket ss = new ServerSocket(6666);
+		ServerSocket serverSocket = new ServerSocket(6666);
 		
 		sout.println( "Waiting a client." );		
-		Socket socket = ss.accept();// establishes connection
+		Socket socket = serverSocket.accept();// establishes connection
 		
 		sout.println( "A client has been accepted." );
 		
@@ -18,7 +18,7 @@ public class MyServer {
 		String str = (String) in.readUTF();
 		sout.println("Message received on server = " + str);
 		
-		ss.close();
+		serverSocket.close();
 		
 		sout.println( "Good bye!" );
 	}
