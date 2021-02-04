@@ -9,8 +9,8 @@ public class InpuStreamExample {
 		int i = fin.read();
 		char c = (char) i; 
 		
-		System.out.println( i );
-		System.out.println( c );
+		System.out.println( "int = " + i );
+		System.out.println( "char = " + c );
 
 		fin.close();
 	}
