@@ -9,27 +9,37 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 
 public class Employee {
-	
+
 	private String empId;
 	private String firstName;
 	private String lastname;
 	private Date dob;
 	private String phoneNo;
-	
-	public static void main( String [] args ) {
-		log.debug( "Hello...." );
+
+	public static void main(String[] args) {
+		log.debug("Hello....");
+
+		var emps = new EmployeeList();
+
+		Employee e ;
 		
-		Employee e = new Employee();
+		e = new Employee();
+		e.setFirstName("John");
+
+		emps.add(e);
 		
-		e.setFirstName( "John" );
-		var firstName = e.getFirstName(); 
-		
-		System.out.println( firstName );
-		System.out.println( e.toString() );
-		System.out.println( "" + e.toString() );
-		System.out.println( "" + e );
-		
-		log.debug( "I am here!" );
+		e = new Employee();
+		e.setFirstName("Brown");
+
+		emps.add(e);
+
+		for (var emp : emps) { 
+			System.out.println( "firstName = " + e.getFirstName() ); 
+			System.out.println( "emp = " + e);
+
+			log.debug("I am here!");
+		}
+
 	}
-	
+
 }
