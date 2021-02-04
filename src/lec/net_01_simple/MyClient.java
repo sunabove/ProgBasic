@@ -11,15 +11,15 @@ public class MyClient {
 		Socket s = new Socket("localhost", 6666);
 		sout.println( "Connected to the server." );
 		
-		DataOutputStream dout = new DataOutputStream(s.getOutputStream());
+		DataOutputStream out = new DataOutputStream(s.getOutputStream());
 		var msg = "Hello...." ;
 		
-		dout.writeUTF( msg );
+		out.writeUTF( msg );
 		
 		sout.println( "Message sent = " + msg );
 		
-		dout.flush();
-		dout.close();
+		out.flush();
+		out.close();
 		
 		s.close();
 		

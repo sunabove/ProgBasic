@@ -20,6 +20,7 @@ public class FileCopy {
 		}
 
 		out.flush();
+		
 		in.close();
 		out.close();
 		

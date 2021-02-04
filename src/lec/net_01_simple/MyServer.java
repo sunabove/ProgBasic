@@ -14,8 +14,8 @@ public class MyServer {
 		
 		sout.println( "A client has been accepted." );
 		
-		DataInputStream dis = new DataInputStream(s.getInputStream());
-		String str = (String) dis.readUTF();
+		DataInputStream in = new DataInputStream(s.getInputStream());
+		String str = (String) in.readUTF();
 		sout.println("Message received on server = " + str);
 		
 		ss.close();
