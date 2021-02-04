@@ -4,7 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
 
-public class WriteFibonacciFile {
+public class WriteFibonacciFileHashMap {
 	
 	static HashMap <Integer, Integer> fibMap = new HashMap<Integer, Integer>();
 	
@@ -12,8 +12,17 @@ public class WriteFibonacciFile {
 		if (n <= 2) {
 			return 1;
 		}
-
-		return fibonacci(n - 1) + fibonacci(n - 2);
+		
+		var f = fibMap.get( n );
+		
+		if( f != null ) {
+			return f;
+		} else {
+			f = fibonacci(n - 1) + fibonacci(n - 2);			
+			fibMap.put( n,  f );
+			
+			return f;
+		}
 	}
 
 	public static void main(String[] args) throws Exception {
