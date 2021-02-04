@@ -17,7 +17,12 @@ public class MyServer {
 		
 		DataInputStream in = new DataInputStream( socket.getInputStream() );
 		
+		int i = in.read();
+		
+		sout.println( "i = " + i );
+		
 		String str = (String) in.readUTF();
+		
 		sout.println("Message received on server = " + str);
 		
 		serverSocket.close();

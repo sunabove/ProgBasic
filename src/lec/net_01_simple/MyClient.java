@@ -14,7 +14,9 @@ public class MyClient {
 		
 		DataOutputStream out = new DataOutputStream( socket.getOutputStream() );
 		
-		var msg = "Hello...." ;
+		var msg = "[Hello....]" ;
+		
+		out.write( 1 );
 		
 		out.writeUTF( msg );
 		
