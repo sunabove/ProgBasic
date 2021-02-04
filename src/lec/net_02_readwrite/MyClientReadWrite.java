@@ -11,20 +11,20 @@ class MyClientReadWrite {
 		Socket s = new Socket("localhost", 3333);
 		out.println( "Connected to the server." );
 		
-		DataInputStream din = new DataInputStream(s.getInputStream());
-		DataOutputStream dout = new DataOutputStream(s.getOutputStream());
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		DataInputStream in = new DataInputStream(s.getInputStream());
+		DataOutputStream output = new DataOutputStream(s.getOutputStream());
+		BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
 
 		String str = "", str2 = "";
 		while (!str.equals("stop")) {
-			str = br.readLine();
-			dout.writeUTF(str);
-			dout.flush();
-			str2 = din.readUTF();
+			str = console.readLine();
+			output.writeUTF(str);
+			output.flush();
+			str2 = in.readUTF();
 			System.out.println("Server says: " + str2);
 		}
 
-		dout.close();
+		output.close();
 		s.close();
 		
 		out.println( "Good bye!" );

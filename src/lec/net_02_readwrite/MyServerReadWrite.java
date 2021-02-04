@@ -11,22 +11,22 @@ class MyServerReadWrite {
 		
 		out.println( "Waiting a client." );	
 		Socket s = ss.accept();
-		out.println( "A client has been accepted." );
+		out.println( "A client has been accepted." ); 
 		
-		DataInputStream din = new DataInputStream(s.getInputStream());
-		DataOutputStream dout = new DataOutputStream(s.getOutputStream());
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		DataInputStream in = new DataInputStream(s.getInputStream());
+		DataOutputStream output = new DataOutputStream(s.getOutputStream());
+		BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
 
 		String str = "", str2 = "";
 		while (!str.equals("stop")) {
-			str = din.readUTF();
+			str = in.readUTF();
 			System.out.println("client says: " + str);
-			str2 = br.readLine();
-			dout.writeUTF(str2);
-			dout.flush();
+			str2 = console.readLine();
+			output.writeUTF(str2);
+			output.flush();
 		}
 		
-		din.close();
+		in.close();
 		s.close();
 		ss.close();
 		
