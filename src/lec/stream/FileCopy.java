@@ -20,7 +20,7 @@ public class FileCopy {
 		while( i > -1 ) {
 			sout.println( "char = " + (char) i );
 			
-			// 파일에서 한 바이트 씀.
+			// 파일에 한 바이트 씀.
 			out.write( i );
 			// 파일에서 한 바이트 읽어들임.
 			i = in.read(); 
