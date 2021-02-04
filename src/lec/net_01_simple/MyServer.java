@@ -10,7 +10,7 @@ public class MyServer {
 		ServerSocket serverSocket = new ServerSocket(6666);
 		
 		sout.println( "Waiting a client." );		
-		Socket socket = serverSocket.accept();// establishes connection
+		Socket socket = serverSocket.accept();
 		
 		sout.println( "A client has been accepted." );
 		
