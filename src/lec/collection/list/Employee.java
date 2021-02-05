@@ -1,19 +1,16 @@
 package lec.collection.list;
 
-import java.util.Date;
-
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
 @Data
 @Slf4j
-
 public class Employee {
 
 	private String empId;
 	private String firstName;
 	private String lastname;
-	private Date dob;
+	private java.util.Date dob;
 	private String phoneNo;
 
 	public static void main(String[] args) {
