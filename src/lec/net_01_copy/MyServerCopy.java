@@ -27,11 +27,13 @@ public class MyServerCopy {
 		}
 		
 		// 버퍼에서 물리적 파일로 보낸다.
-		fileCopy.flush();
-		
+		fileCopy.flush();		
 		// 다 사용한 자원들을 닫는다.
-		fileCopy.close();		
+		fileCopy.close();
+		
 		in.close();
+		socket.close();
+		
 		serverSocket.close();
 		
 		sout.println( "The image file has been copied." );		
