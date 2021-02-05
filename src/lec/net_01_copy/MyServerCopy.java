@@ -18,7 +18,7 @@ public class MyServerCopy {
 		DataInputStream in = new DataInputStream( socket.getInputStream() );		
 		var fileCopy = new FileOutputStream("C:\\Temp\\my_image_copy.png");
 		
-		sout.println( "Receiving an image file from the client ....." );
+		sout.println( "Receiving an image file from a client ..." );
 		
 		int i;		
 		while( ( i = in.read() ) > -1 ) {
