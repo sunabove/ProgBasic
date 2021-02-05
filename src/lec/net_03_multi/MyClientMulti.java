@@ -41,12 +41,12 @@ class MyClientMulti {
 		var sout = System.out;
 		
 		sout.println( "Connecting to the server...." );
-		Socket socket = new Socket("localhost", 3333);
+		var socket = new Socket("localhost", 3333);
 		sout.println( "Connected to the server.\n" );
 		
-		DataInputStream in = new DataInputStream(socket.getInputStream());
-		DataOutputStream out = new DataOutputStream(socket.getOutputStream());
-		BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
+		var in = new DataInputStream(socket.getInputStream());
+		var out = new DataOutputStream(socket.getOutputStream());
+		var console = new BufferedReader(new InputStreamReader(System.in));
 		
 		// Enter name from console 
 		var userName = "" ;
@@ -74,8 +74,8 @@ class MyClientMulti {
 			
 			if( clientInputMsg.startsWith( "\\n" ) ) {
 				// 이름 변경하는 기능
-				var name = clientInputMsg.replace( "\\n", "" );
-				name = name.trim();
+				var name = clientInputMsg.replace( "\\n", "" ).trim();
+				
 				if( name.length() < 1 ) {
 					sout.println( "Invalid name." );
 				} else {

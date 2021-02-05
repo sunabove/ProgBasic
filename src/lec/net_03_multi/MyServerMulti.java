@@ -87,7 +87,7 @@ class MyServerMulti {
 	public static void main(String args[]) throws Exception {
 		var sout = System.out; 
 		
-		ServerSocket serverSocket = new ServerSocket(3333);
+		var serverSocket = new ServerSocket(3333);
 		
 		sout.println( "Waiting a client ..." );	
 		Socket socket ;
