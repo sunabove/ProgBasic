@@ -1,4 +1,4 @@
-package lec.collection;
+package lec.collection.list;
 
 import java.util.HashMap;
 import java.util.Iterator;

@@ -1,13 +1,16 @@
-package lec.collection;
+package lec.collection.hashMap;
 
 import java.util.HashMap;
 
-public class StudentHashMapTestPbr {
+public class StudentHashMapTestPbr2 {
+	// 박보람 님 작성 
 
-	public static void main(String[] args) {		
+	public static void main(String[] args) {
 		
-		var s = new HashMap<Integer, String>();
+		
+		HashMap <Integer, String> s = new HashMap<Integer, String>();
 		int idx = 1;
+		int idxpre = 1;
 		int max = idx;
 		
 		s.put(idx++, "박보람");
@@ -16,16 +19,15 @@ public class StudentHashMapTestPbr {
 		s.put(idx++, "정한민");
 		s.put(idx++, "홍지수");
 		
-		// max 값을 구한다.
 		for (Integer k : s.keySet()) {
 			if (k > max) {
+				idxpre = max;
 				max = k;
 			}
 		}
 		
-		// max 차순위 키 값을 구한다.
-		
 		System.out.println(s.get(max));
+		System.out.println("pre " + s.get(idxpre));  
 
 	}
 
