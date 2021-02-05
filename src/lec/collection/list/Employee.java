@@ -10,9 +10,9 @@ public class Employee {
 	private String empId;
 	private String firstName;
 	private String lastname;
-	private java.util.Date dob;
 	private String phoneNo;
-
+	private java.util.Date birthDate;
+	
 	public static void main(String[] args) {
 		log.debug("Hello....");
 
