@@ -19,6 +19,7 @@ class MyServerReadWrite {
 
 		var strClient = "";
 		var strConsole = "";
+		
 		while (! strClient.equals("stop")) {
 			strClient = in.readUTF();
 			System.out.println("client says: " + strClient);

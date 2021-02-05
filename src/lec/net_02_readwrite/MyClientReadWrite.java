@@ -20,6 +20,7 @@ class MyClientReadWrite {
 			str = console.readLine();
 			out.writeUTF(str);
 			out.flush();
+			
 			str2 = in.readUTF();
 			System.out.println("Server says: " + str2);
 		}
