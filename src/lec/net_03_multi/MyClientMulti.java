@@ -59,8 +59,8 @@ class MyClientMulti {
 		}
 		// -- Enter name from console.		
 		
-		var thread = new ReadThread( in );
-		thread.start();
+		var readThread = new ReadThread( in );
+		readThread.start();
 
 		sout.println( "\nWELCOME TO MyCHAT System." );
 		sout.println( "Enter stop to terminate!\n" );
@@ -91,7 +91,7 @@ class MyClientMulti {
 			out.flush(); 
 		}
 		
-		thread.stop = true;
+		readThread.stop = true;
 
 		out.close();
 		socket.close();
