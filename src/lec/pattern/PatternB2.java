@@ -1,6 +1,6 @@
-package lec;
+package lec.pattern;
 
-public class ExB2 {
+public class PatternB2 {
 
 	public static void main(String[] args) {
 		var out = System.out; 

@@ -1,6 +1,6 @@
-package lec;
+package lec.pattern;
 
-public class ExC {
+public class PatternC2 {
 	public static void main(String[] args) {
 		var out = System.out; 
 		var n = 9 ; 

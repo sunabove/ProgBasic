@@ -1,4 +1,4 @@
-package lec;
+package lec.pattern;
 
 public class PatternHGgt {
 	// 공경택 님 작성 

@@ -1,4 +1,4 @@
-package lec;
+package lec.pattern;
 
 import java.util.Iterator;
 

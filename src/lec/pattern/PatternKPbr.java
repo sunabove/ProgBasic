@@ -1,4 +1,4 @@
-package lec;
+package lec.pattern;
 
 public class PatternKPbr {
 	// 박보람 작성

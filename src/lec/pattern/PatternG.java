@@ -1,4 +1,4 @@
-package lec;
+package lec.pattern;
 
 public class PatternG {
 	// 홍지수님 작성
