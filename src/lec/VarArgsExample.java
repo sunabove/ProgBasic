@@ -6,7 +6,7 @@ public class VarArgsExample {
 		//System.out.println("display method invoked.");
 		
 		for (String s : values) {
-			System.out.print(s);
+			System.out.print(s + ", ");			
 		}
 		System.out.println();
 	}
