@@ -1,4 +1,4 @@
-package lec.net_02_readwrite;
+package lec.net_03_readwrite;
 
 import java.net.*;
 import java.io.*;

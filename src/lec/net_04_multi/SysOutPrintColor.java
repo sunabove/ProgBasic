@@ -1,4 +1,4 @@
-package lec.net_03_multi;
+package lec.net_04_multi;
 // package 선언이 없는 것은 top package 이다.
 
 public class SysOutPrintColor {

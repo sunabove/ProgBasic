@@ -1,4 +1,4 @@
-package lec.net_03_multi;
+package lec.net_04_multi;
 
 import java.net.*;
 import java.io.*;

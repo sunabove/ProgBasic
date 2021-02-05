@@ -1,4 +1,4 @@
-package lec.net_01_copy;
+package lec.net_02_copy;
 
 import java.io.*;
 import java.net.*;
