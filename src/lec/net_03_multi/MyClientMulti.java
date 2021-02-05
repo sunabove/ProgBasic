@@ -3,7 +3,8 @@ package lec.net_03_multi;
 import java.net.*;
 import java.io.*;
 
-class MyClientMulti { 
+class MyClientMulti {
+	
 	static class ReadThread extends Thread {
 		DataInputStream in ; 
 		
@@ -30,7 +31,7 @@ class MyClientMulti {
 				if( svrMsg.contains("stop") ) {
 					stop = true; 
 				}
-				console.println();
+				//console.println();
 				console.println( svrMsg );
 			};
 		}
@@ -41,22 +42,36 @@ class MyClientMulti {
 		
 		sout.println( "Connecting to the server...." );
 		Socket socket = new Socket("localhost", 3333);
-		sout.println( "Connected to the server." );
+		sout.println( "Connected to the server.\n" );
 		
 		DataInputStream in = new DataInputStream(socket.getInputStream());
 		DataOutputStream out = new DataOutputStream(socket.getOutputStream());
 		BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
 		
+		// Enter name from console 
+		var userName = "" ;
+		while( userName.trim().length() < 1 ) {
+			sout.print( "Enter your name : " );
+			userName = console.readLine().trim();
+			if( userName.trim().length() < 1 ) {
+				sout.println( "WARN : Name is invalid!" );
+			}
+		}
+		// -- Enter name from console.		
+		
 		var thread = new ReadThread( in );
 		thread.start();
 
-		var str = "" ;
-		var userName = "John" ; 
+		sout.println( "\nWELCOME TO CHAT System." );
+		sout.println( "Enter stop to terminate!\n" );
 		
-		while ( !str.equals("stop")) {
-			sout.print( "Enter message : ");
-			str = console.readLine();
-			out.writeUTF( userName + " " + str);
+		var clientInputMsg = "" ;
+		
+		while ( !clientInputMsg.equals("stop")) {
+			sout.print( String.format("[%s] Enter message : ", userName ) );
+			clientInputMsg = console.readLine();
+			clientInputMsg = clientInputMsg.trim();
+			out.writeUTF( String.format( "[%s] %s", userName, clientInputMsg ) );
 			out.flush(); 
 		}
 		

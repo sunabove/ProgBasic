@@ -11,7 +11,7 @@ class MyServerMulti {
 	static ArrayList<String> msgList = new ArrayList<>();
 	static int msgCount = 0 ; 
 	
-	static synchronized void sendToAllClient( SendThread currThread ) throws Exception {
+	static synchronized void sendToAllClient( SendThread currThread ) {
 		while( msgList.size() > 0 ) {
 			var msg = msgList.get(0);
 			msgList.remove( 0 );
@@ -19,7 +19,14 @@ class MyServerMulti {
 			// 모든 클라이언트에 메시지 전송 
 			for( var sendThread : sendThreadList ) {
 				if( sendThread != currThread ) { 
-					sendThread.out.writeUTF( msg );
+					try {
+						sendThread.out.writeUTF( msg );
+					} catch (IOException e) {
+						// 에러가 발생하면 접속이 종료된 간주함.
+						sendThread.stop = true;
+						//  쓰레드 목록에서 제외한다.
+						sendThreadList.remove( sendThread );
+					}
 				}
 			}
 		}
@@ -48,22 +55,32 @@ class MyServerMulti {
 			}
 		}
 		
-		public void runImpl() throws Exception {
+		public void runImpl() {
 			var in = this.in ;  
 			var clientMsg = "" ;
 			var sout = System.out ; 
 			
-			while( ! stop && ( clientMsg = in.readUTF() ) != null ) {
-				msgCount ++ ; 
-				sout.println( String.format( "[%03d] Message received = %s", msgCount, clientMsg ) );
-				if( clientMsg.contains("stop") ) {
-					stop = true; 
-				} else { 
-					msgList.add( clientMsg ); 
-					
-					sendToAllClient( this );
-				}
-			};
+			
+			try {
+				while( ! stop && ( clientMsg = in.readUTF() ) != null ) {
+					msgCount ++ ; 
+					sout.println( String.format( "[%03d] Message received = %s", msgCount, clientMsg ) );
+					if( clientMsg.contains("stop") ) {
+						stop = true; 
+					} else { 
+						msgList.add( clientMsg ); 
+						
+						sendToAllClient( this );
+					}
+				};
+			} catch (IOException e) {
+				stop = true ;
+			}
+			
+			// 클라이언트와 접속이 종료되면 쓰레드 목록에서 제외한다.
+			if( sendThreadList.contains( this) ) {
+				sendThreadList.remove( this );
+			}
 		}
 	}
 	
