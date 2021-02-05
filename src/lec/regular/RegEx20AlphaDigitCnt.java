@@ -8,6 +8,10 @@ public class RegEx20AlphaDigitCnt {
 		
 		var s = "abc 123 def 345 ghi 678.9"; 
 		
+		var digitCnt = Pattern.compile( "[0-9]" ).matcher(s).results().count();
+		
+		out.println( String.format("digitCnt = %d", digitCnt ) );
+		
 		var numCnt = Pattern.compile( "[0-9]+" ).matcher(s).results().count();
 		
 		out.println( String.format("numCnt = %d", numCnt ) );

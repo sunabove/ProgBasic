@@ -51,10 +51,11 @@ class MyClientMulti {
 		thread.run();
 
 		var str = "" ;
+		var userName = "John" ; 
 		
 		while ( !str.equals("stop")) {
 			str = console.readLine();
-			out.writeUTF(str);
+			out.writeUTF( userName + " " + str);
 			out.flush(); 
 		}
 		
