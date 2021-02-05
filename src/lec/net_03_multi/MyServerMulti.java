@@ -9,6 +9,7 @@ class MyServerMulti {
 	static ArrayList<SendThread> sendThreadList = new ArrayList<>();
 	
 	static ArrayList<String> msgList = new ArrayList<>();
+	static int msgCount = 0 ; 
 	
 	static synchronized void sendToAllClient( SendThread currThread ) throws Exception {
 		while( msgList.size() > 0 ) {
@@ -50,7 +51,11 @@ class MyServerMulti {
 		public void runImpl() throws Exception {
 			var in = this.in ;  
 			var clientMsg = "" ;
+			var sout = System.out ; 
+			
 			while( ! stop && ( clientMsg = in.readUTF() ) != null ) {
+				msgCount ++ ; 
+				sout.println( String.format( "[%03d] Message received = %s", msgCount, clientMsg ) );
 				if( clientMsg.contains("stop") ) {
 					stop = true; 
 				} else { 

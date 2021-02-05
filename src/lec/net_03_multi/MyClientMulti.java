@@ -48,12 +48,13 @@ class MyClientMulti {
 		BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
 		
 		var thread = new ReadThread( in );
-		thread.run();
+		thread.start();
 
 		var str = "" ;
 		var userName = "John" ; 
 		
 		while ( !str.equals("stop")) {
+			sout.print( "Enter message : ");
 			str = console.readLine();
 			out.writeUTF( userName + " " + str);
 			out.flush(); 

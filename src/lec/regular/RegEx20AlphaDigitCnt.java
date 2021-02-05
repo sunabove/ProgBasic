@@ -18,6 +18,6 @@ public class RegEx20AlphaDigitCnt {
 		
 		var alpahCnt = Pattern.compile( "[A-z]+" ).matcher(s).results().count();
 		
-		out.println( String.format("alpahCnt = %d", alpahCnt ) );
+		out.println( String.format("alphaWordCnt = %d", alpahCnt ) );
 	}
 }
