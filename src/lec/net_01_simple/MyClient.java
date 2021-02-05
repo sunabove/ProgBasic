@@ -12,7 +12,7 @@ public class MyClient {
 		Socket socket = new Socket( "localhost", 6666 );
 		sout.println( "Connected to the server." );
 		
-		DataOutputStream out = new DataOutputStream( socket.getOutputStream() );
+		var out = new DataOutputStream( socket.getOutputStream() );
 		
 		var msg = "[Hello....]" ;
 		

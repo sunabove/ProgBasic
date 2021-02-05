@@ -15,7 +15,7 @@ public class MyServer {
 		
 		sout.println( "A client has been accepted." );
 		
-		DataInputStream in = new DataInputStream( socket.getInputStream() );
+		var in = new DataInputStream( socket.getInputStream() );
 		
 		int i = in.read();
 		

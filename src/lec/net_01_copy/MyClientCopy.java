@@ -18,7 +18,7 @@ public class MyClientCopy {
 		Socket socket = new Socket(host, 8080);
 		sout.println("Connected to the server.");
 
-		DataOutputStream out = new DataOutputStream(socket.getOutputStream());
+		var out = socket.getOutputStream();
 
 		sout.println("Coping an image file ..... ");
 
