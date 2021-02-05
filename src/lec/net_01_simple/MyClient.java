@@ -8,8 +8,9 @@ public class MyClient {
 		var sout = System.out; 
 		
 		sout.println( "Connecting to the server...." );
+		
 		// 서버를 접속한다.
-		Socket socket = new Socket( "localhost", 6666 );
+		var socket = new Socket( "localhost", 6666 );
 		sout.println( "Connected to the server." );
 		
 		var out = new DataOutputStream( socket.getOutputStream() );

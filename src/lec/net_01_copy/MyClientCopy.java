@@ -12,10 +12,10 @@ public class MyClientCopy {
 		// 받을 사람 ip 주소
 		// String host = "localhost" ; // "192.168.0.39";
 		// String host = "sunabove.iptime.org";
-		String host = "192.168.75.135";
+		var host = "192.168.75.135";
 
 		// 서버를 접속한다.
-		Socket socket = new Socket(host, 8080);
+		var socket = new Socket(host, 8080);
 		sout.println("Connected to the server.");
 
 		var out = socket.getOutputStream();

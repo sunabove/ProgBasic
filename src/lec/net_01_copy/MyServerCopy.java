@@ -7,11 +7,11 @@ public class MyServerCopy {
 	public static void main(String[] args) throws Exception {
 		var sout = System.out; 
 		
-		ServerSocket serverSocket = new ServerSocket( 8080 );
+		var serverSocket = new ServerSocket( 8080 );
 		
 		sout.println( "Waiting a client ..." );
 		// 클라이언트 접속을 기다려서, 접속하면 소켓을 생성한다.
-		Socket socket = serverSocket.accept();
+		var socket = serverSocket.accept();
 		
 		sout.println( "A client has been accepted." );
 		
