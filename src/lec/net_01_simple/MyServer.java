@@ -7,11 +7,11 @@ public class MyServer {
 	public static void main(String[] args) throws Exception {
 		var sout = System.out; 
 		
-		ServerSocket serverSocket = new ServerSocket( 6666 );
+		var serverSocket = new ServerSocket( 6666 );
 		
 		sout.println( "Waiting a client ..." );
 		// 클라이언트 접속을 기다려서, 접속하면 소켓을 생성한다.
-		Socket socket = serverSocket.accept();
+		var socket = serverSocket.accept();
 		
 		sout.println( "A client has been accepted." );
 		
@@ -21,7 +21,7 @@ public class MyServer {
 		
 		sout.println( "i = " + i );
 		
-		String str = (String) in.readUTF();
+		var str = (String) in.readUTF();
 		
 		sout.println("Message received on server = " + str);
 		
