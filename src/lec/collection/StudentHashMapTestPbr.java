@@ -6,7 +6,7 @@ public class StudentHashMapTestPbr {
 
 	public static void main(String[] args) {		
 		
-		HashMap <Integer, String> s = new HashMap<Integer, String>();
+		var s = new HashMap<Integer, String>();
 		int idx = 1;
 		int max = idx;
 		
@@ -16,11 +16,14 @@ public class StudentHashMapTestPbr {
 		s.put(idx++, "정한민");
 		s.put(idx++, "홍지수");
 		
+		// max 값을 구한다.
 		for (Integer k : s.keySet()) {
 			if (k > max) {
 				max = k;
 			}
 		}
+		
+		// max 차순위 키 값을 구한다.
 		
 		System.out.println(s.get(max));
 

@@ -8,12 +8,13 @@ public class MyClientCopy {
 		var sout = System.out; 
 		
 		sout.println( "Connecting to the server...." );
-		// 서버를 접속한다.
-		String host = "localhost" ; // "192.168.0.39";
+		// 받을 사람 ip 주소 
+		//String host = "localhost" ; // "192.168.0.39";
 		//String host = "sunabove.iptime.org";
-		//String host = "192.168.75.135";
+		String host = "192.168.75.135";
 		
-		Socket socket = new Socket( host, 6666 );
+		// 서버를 접속한다.
+		Socket socket = new Socket( host, 8080 );
 		sout.println( "Connected to the server." );
 		
 		DataOutputStream out = new DataOutputStream( socket.getOutputStream() );
