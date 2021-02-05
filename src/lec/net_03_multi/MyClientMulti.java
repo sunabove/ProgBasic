@@ -65,28 +65,28 @@ class MyClientMulti {
 		sout.println( "\nWELCOME TO MyCHAT System." );
 		sout.println( "Enter stop to terminate!\n" );
 		
-		var clientInputMsg = "" ;
+		var consoleInMsg = "" ;
 		
-		while ( ! clientInputMsg.equals("stop")) {
+		while ( ! consoleInMsg.equals("stop")) {
 			sout.print( String.format("[%s] Enter message : ", userName ) );
-			clientInputMsg = console.readLine();
-			clientInputMsg = clientInputMsg.trim();
+			consoleInMsg = console.readLine();
+			consoleInMsg = consoleInMsg.trim();
 			
-			if( clientInputMsg.startsWith( "\\n" ) ) {
+			if( consoleInMsg.startsWith( "\\n" ) ) {
 				// 이름 변경하는 기능
-				var name = clientInputMsg.replace( "\\n", "" ).trim();
+				var name = consoleInMsg.replace( "\\n", "" ).trim();
 				
 				if( name.length() < 1 ) {
 					sout.println( "Invalid name." );
 				} else {
 					sout.println( String.format( "Your name has changed to %s.", name ) ); 
-					clientInputMsg = String.format( "%s's name has been changed to %s.", userName, name );
-					out.writeUTF( String.format( "[%s] %s", userName, clientInputMsg ) );
+					consoleInMsg = String.format( "%s's name has been changed to %s.", userName, name );
+					out.writeUTF( String.format( "[%s] %s", userName, consoleInMsg ) );
 					userName = name;
 				}
 				// -- 이름 변경하는 기능
 			} else { 
-				out.writeUTF( String.format( "[%s] %s", userName, clientInputMsg ) );
+				out.writeUTF( String.format( "[%s] %s", userName, consoleInMsg ) );
 			}
 			out.flush(); 
 		}
