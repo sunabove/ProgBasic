@@ -1,10 +1,6 @@
-// package 선언이 없는 것은 top package 이다.
 
-public class Abc {
-	
-	// Abc의  클래스명은?
-	// Abc
-	// Abc : Simple class name
+
+public class SysOutPrintColor { 
 	
 	public static final String ANSI_RESET = "\u001B[0m";
 	public static final String ANSI_BLACK = "\u001B[30m";
@@ -16,10 +12,12 @@ public class Abc {
 	public static final String ANSI_CYAN = "\u001B[36m";
 	public static final String ANSI_WHITE = "\u001B[37m";
 
-	public static void main(String[] args) {
-		System.out.println( "abc Hello..." );
+	public static void main(String[] args) {  
+		var out = System.out;
 		
-		System.out.println(ANSI_RED + "This text is red!" + ANSI_RESET);
+		out.println(ANSI_RED + "This text is red!" + ANSI_RESET);
+		out.println(ANSI_GREEN + "This text is green!" + ANSI_RESET); 
+		
 	}
 
 }

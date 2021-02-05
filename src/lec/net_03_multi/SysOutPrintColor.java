@@ -1,6 +1,7 @@
+package lec.net_03_multi;
 // package 선언이 없는 것은 top package 이다.
 
-public class Abc {
+public class SysOutPrintColor {
 	
 	// Abc의  클래스명은?
 	// Abc
@@ -16,10 +17,12 @@ public class Abc {
 	public static final String ANSI_CYAN = "\u001B[36m";
 	public static final String ANSI_WHITE = "\u001B[37m";
 
-	public static void main(String[] args) {
-		System.out.println( "abc Hello..." );
+	public static void main(String[] args) {  
+		var out = System.out;
 		
-		System.out.println(ANSI_RED + "This text is red!" + ANSI_RESET);
+		out.println(ANSI_RED + "This text is red!" + ANSI_RESET);
+		out.println(ANSI_GREEN + "This text is green!" + ANSI_RESET); 
+		
 	}
 
 }
