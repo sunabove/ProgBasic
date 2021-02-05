@@ -1,9 +1,5 @@
 package lec.regular;
 
-/*Create a regular expression that 
- * accepts 10 digit numeric characters 
- * starting with 7, 8 or 9 only.*/
-
 import java.util.regex.*;
 
 public class RegEx08DigitCnt {
