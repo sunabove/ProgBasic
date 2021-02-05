@@ -62,16 +62,32 @@ class MyClientMulti {
 		var thread = new ReadThread( in );
 		thread.start();
 
-		sout.println( "\nWELCOME TO CHAT System." );
+		sout.println( "\nWELCOME TO MyCHAT System." );
 		sout.println( "Enter stop to terminate!\n" );
 		
 		var clientInputMsg = "" ;
 		
-		while ( !clientInputMsg.equals("stop")) {
+		while ( ! clientInputMsg.equals("stop")) {
 			sout.print( String.format("[%s] Enter message : ", userName ) );
 			clientInputMsg = console.readLine();
 			clientInputMsg = clientInputMsg.trim();
-			out.writeUTF( String.format( "[%s] %s", userName, clientInputMsg ) );
+			
+			if( clientInputMsg.startsWith( "\\n" ) ) {
+				// 이름 변경하는 기능
+				var name = clientInputMsg.replace( "\\n", "" );
+				name = name.trim();
+				if( name.length() < 1 ) {
+					sout.println( "Invalid name." );
+				} else {
+					sout.println( String.format( "Your name has changed to %s.", name ) ); 
+					clientInputMsg = String.format( "%s's name has been changed to %s.", userName, name );
+					out.writeUTF( String.format( "[%s] %s", userName, clientInputMsg ) );
+					userName = name;
+				}
+				// -- 이름 변경하는 기능
+			} else { 
+				out.writeUTF( String.format( "[%s] %s", userName, clientInputMsg ) );
+			}
 			out.flush(); 
 		}
 		
