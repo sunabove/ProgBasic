@@ -6,11 +6,11 @@ import java.io.*;
 
 public class MyServerRoom {
 	
-	private int threadId = 0 ;
-	
 	private ArrayList<SendThread> sendThreadList = new ArrayList<>();	
 	private ArrayList<String> msgList = new ArrayList<>();
 	private int msgCount = 0 ; 
+	
+	PrintStream sout = System.out;
 	
 	synchronized void sendToAllClient( SendThread currThread ) {
 		while( msgList.size() > 0 ) {
@@ -37,16 +37,15 @@ public class MyServerRoom {
 	}
 	
 	public void startServer() throws Exception {
-		var sout = System.out; 
-		
 		var serverSocket = new ServerSocket(3333);
 		
 		sout.println( "Waiting a client ..." );	
 		Socket socket ;
+		var threadId = 0 ; 
 		while( ( socket = serverSocket.accept() ) != null ) {
 			sout.println( "A client has been accepted." ); 
-			
-			var sendThread = new SendThread( socket ); 
+			threadId ++ ; 
+			var sendThread = new SendThread( socket, threadId ); 
 			sendThread.start();
 		} 
 		
@@ -56,17 +55,20 @@ public class MyServerRoom {
 	}
 	
 	class SendThread extends Thread {
+		private int threadId ; 
 		private DataInputStream in ; 
 		private DataOutputStream out ; 
 		
 		private boolean stop = false ;
 		
-		public SendThread( Socket socket ) throws Exception {
+		public SendThread( Socket socket, int threadId ) throws Exception {
 			super( "" + threadId );
-			threadId ++;
+			this.threadId = threadId ; 
 			
 			this.in = new DataInputStream( socket.getInputStream());
 			this.out = new DataOutputStream( socket.getOutputStream());
+			
+			sout.println( String.format( "Thread[%d] created.", threadId ) ); 
 		}
 		
 		public void stopThread() {

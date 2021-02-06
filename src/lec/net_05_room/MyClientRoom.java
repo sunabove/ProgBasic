@@ -35,14 +35,19 @@ public class MyClientRoom {
 		sout.println( "\nWELCOME TO MyCHAT System." );
 		sout.println( "Enter \\stop to terminate!\n" );
 		
+		var stop = false ; 
 		var consoleInMsg = "" ;
 		
-		while ( ! consoleInMsg.trim().equals("\\stop")) {
+		while ( ! stop ) {
 			sout.print( String.format("[%s] Enter message : ", userName ) );
-			consoleInMsg = console.readLine();
-			consoleInMsg = consoleInMsg.trim();
+			consoleInMsg = console.readLine(); 
 			
-			if( consoleInMsg.startsWith( "\\n" ) ) {
+			if( consoleInMsg.trim().equals( "\\stop" ) ) {
+				stop = true ;	
+				
+				consoleInMsg = String.format( "User %s exited.", userName );
+				out.writeUTF( String.format( "[%s] %s", userName, consoleInMsg ) );				
+			} else if( consoleInMsg.startsWith( "\\n" ) ) {
 				// 이름 변경하는 기능
 				var name = consoleInMsg.replace( "\\n", "" ).trim();
 				
@@ -58,6 +63,7 @@ public class MyClientRoom {
 			} else { 
 				out.writeUTF( String.format( "[%s] %s", userName, consoleInMsg ) );
 			}
+			
 			out.flush(); 
 		}
 		
