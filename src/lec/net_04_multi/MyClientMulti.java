@@ -3,7 +3,7 @@ package lec.net_04_multi;
 import java.net.*;
 import java.io.*;
 
-class MyClientMulti {
+public class MyClientMulti {
 	
 	static class ReadThread extends Thread {
 		DataInputStream in ; 

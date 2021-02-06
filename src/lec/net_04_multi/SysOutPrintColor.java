@@ -3,10 +3,6 @@ package lec.net_04_multi;
 
 public class SysOutPrintColor {
 	
-	// Abc의  클래스명은?
-	// Abc
-	// Abc : Simple class name
-	
 	public static final String ANSI_RESET = "\u001B[0m";
 	public static final String ANSI_BLACK = "\u001B[30m";
 	public static final String ANSI_RED = "\u001B[31m";

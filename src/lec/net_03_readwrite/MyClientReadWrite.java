@@ -3,7 +3,7 @@ package lec.net_03_readwrite;
 import java.net.*;
 import java.io.*;
 
-class MyClientReadWrite {
+public class MyClientReadWrite {
 	public static void main(String args[]) throws Exception {
 		var sout = System.out;
 		

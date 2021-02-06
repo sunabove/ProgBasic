@@ -3,48 +3,18 @@ package lec.net_05_room;
 import java.net.*;
 import java.io.*;
 
-class MyClientRoom {
+public class MyClientRoom {
 	
-	static class ReadThread extends Thread {
-		DataInputStream in ; 
-		
-		boolean stop = false ; 
-		
-		public ReadThread(DataInputStream in ) {
-			this.in = in ; 
-		}
-		
-		public void run() {
-			try {
-				this.runImpl();
-			} catch (Exception e) { 
-				e.printStackTrace();
-			}
-		}
-		
-		public void runImpl() throws Exception {
-			var in = this.in ; 
-			var console = System.out;
-			
-			var svrMsg = "" ;
-			while( ! stop && ( svrMsg = in.readUTF() ) != null ) {
-				if( svrMsg.contains("stop") ) {
-					stop = true; 
-				}
-				//console.println();
-				console.println( svrMsg );
-			};
-		}
+	public MyClientRoom() { 
 	}
 	
-	public static void main(String args[]) throws Exception {
+	public void startClient() throws Exception {
 		var sout = System.out;
 		
 		sout.println( "Connecting to the server...." );
 		var socket = new Socket("localhost", 3333);
 		sout.println( "Connected to the server.\n" );
 		
-		var in = new DataInputStream(socket.getInputStream());
 		var out = new DataOutputStream(socket.getOutputStream());
 		var console = new BufferedReader(new InputStreamReader(System.in));
 		
@@ -59,15 +29,15 @@ class MyClientRoom {
 		}
 		// -- Enter name from console.		
 		
-		var readThread = new ReadThread( in );
+		var readThread = new ReadThread( socket );
 		readThread.start();
 
 		sout.println( "\nWELCOME TO MyCHAT System." );
-		sout.println( "Enter stop to terminate!\n" );
+		sout.println( "Enter \\stop to terminate!\n" );
 		
 		var consoleInMsg = "" ;
 		
-		while ( ! consoleInMsg.equals("stop")) {
+		while ( ! consoleInMsg.trim().equals("\\stop")) {
 			sout.print( String.format("[%s] Enter message : ", userName ) );
 			consoleInMsg = console.readLine();
 			consoleInMsg = consoleInMsg.trim();
@@ -91,11 +61,52 @@ class MyClientRoom {
 			out.flush(); 
 		}
 		
-		readThread.stop = true;
+		readThread.stopThread();
 
-		out.close();
+		out.close(); 
 		socket.close();
 		
 		sout.println( "Good bye!" );
+	}
+	
+	class ReadThread extends Thread {
+		private DataInputStream in ;
+		private boolean stop = false ; 
+		
+		public ReadThread(Socket socket ) throws Exception {
+			this.in = new DataInputStream(socket.getInputStream()); 
+		}
+		
+		public void stopThread() {
+			this.stop = true ;
+			this.interrupt();
+		}
+		
+		public void run() {
+			try {
+				this.runImpl();
+			} catch (Exception e) { 
+				e.printStackTrace();
+			}
+		}
+		
+		public void runImpl() throws Exception {
+			var in = this.in ; 
+			var console = System.out;
+			
+			var svrMsg = "" ;
+			while( ! stop && ( svrMsg = in.readUTF() ) != null ) {
+				if( svrMsg.contains("\stop") ) {
+					stop = true; 
+				}
+				console.println( svrMsg );
+			};
+		}
+	} 
+	
+	public static void main(String args[]) throws Exception {
+		var client = new MyClientRoom();
+		
+		client.startClient();
 	}
 }

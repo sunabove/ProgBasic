@@ -4,7 +4,7 @@ import java.net.*;
 import java.util.ArrayList;
 import java.io.*;
 
-class MyServerRoom {
+public class MyServerRoom {
 	
 	static ArrayList<SendThread> sendThreadList = new ArrayList<>();
 	
@@ -85,6 +85,9 @@ class MyServerRoom {
 	}
 	
 	public static void main(String args[]) throws Exception {
+	}
+	
+	public void startServer() throws Exception {
 		var sout = System.out; 
 		
 		var serverSocket = new ServerSocket(3333);

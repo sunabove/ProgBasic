@@ -4,7 +4,7 @@ import java.net.*;
 import java.util.ArrayList;
 import java.io.*;
 
-class MyServerMulti {
+public class MyServerMulti {
 	
 	static ArrayList<SendThread> sendThreadList = new ArrayList<>();
 	
