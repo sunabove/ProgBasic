@@ -1,12 +1,19 @@
 package lec.net_05_room;
-// package 선언이 없는 것은 top package 이다.
 
-public class SysOutPrintColor {
+public enum AnsiColor {
+	ANSI_RESET("\\u001B[0m"),
+	ANSI_BLACK("\\u001B[30m"),
+	ANSI_RED("\\u001B[31m"),
+	ANSI_GREEN("\u001B[32m"),
+	ANSI_YELLOW("\u001B[33m"),
+	ANSI_BLUE("\u001B[34m"),
+	ANSI_PURPLE("\\u001B[35m"),
+	ANSI_CYAN("\u001B[36m"),
+	ANSI_WHITE("\u001B[37m"),
+    ;
 	
-	// Abc의  클래스명은?
-	// Abc
-	// Abc : Simple class name
-	
+	/*
+	 * 	
 	public static final String ANSI_RESET = "\u001B[0m";
 	public static final String ANSI_BLACK = "\u001B[30m";
 	public static final String ANSI_RED = "\u001B[31m";
@@ -16,13 +23,16 @@ public class SysOutPrintColor {
 	public static final String ANSI_PURPLE = "\u001B[35m";
 	public static final String ANSI_CYAN = "\u001B[36m";
 	public static final String ANSI_WHITE = "\u001B[37m";
+	 */
 
-	public static void main(String[] args) {  
-		var out = System.out;
-		
-		out.println(ANSI_RED + "This text is red!" + ANSI_RESET);
-		out.println(ANSI_GREEN + "This text is green!" + ANSI_RESET); 
-		
-	}
+    private final String text; 
+    
+    AnsiColor(final String text) {
+        this.text = text;
+    }
 
+    @Override
+    public String toString() {
+        return text;
+    }
 }

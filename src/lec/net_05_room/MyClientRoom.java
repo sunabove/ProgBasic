@@ -5,7 +5,33 @@ import java.io.*;
 
 public class MyClientRoom {
 	
+	public static final String ANSI_RESET = "\u001B[0m";
+	public static final String ANSI_BLACK = "\u001B[30m";
+	public static final String ANSI_RED = "\u001B[31m";
+	public static final String ANSI_GREEN = "\u001B[32m";
+	public static final String ANSI_YELLOW = "\u001B[33m";
+	public static final String ANSI_BLUE = "\u001B[34m";
+	public static final String ANSI_PURPLE = "\u001B[35m";
+	public static final String ANSI_CYAN = "\u001B[36m";
+	public static final String ANSI_WHITE = "\u001B[37m"; 
+	
 	public MyClientRoom() { 
+	}
+	
+	public String red( String text ) {
+		return this.color( text, ANSI_RED);
+	}
+	
+	public String green( String text ) {
+		return this.color( text, ANSI_GREEN );
+	}
+	
+	public String blue( String text ) {
+		return this.color( text, ANSI_BLUE);
+	}
+	
+	public String color(String text, String ansiColor ) {
+		return ansiColor + text + ANSI_RESET; 
 	}
 	
 	public void startClient() throws Exception {
@@ -32,7 +58,7 @@ public class MyClientRoom {
 		var readThread = new ReadThread( socket );
 		readThread.start();
 
-		sout.println( "\nWELCOME TO MyCHAT System." );
+		sout.println( String.format( "\nWELCOME TO %s System.", green("MyChat") ) );
 		sout.println( "Enter \\stop to terminate!\n" );
 		
 		var stop = false ; 
@@ -54,8 +80,8 @@ public class MyClientRoom {
 				if( name.length() < 1 ) {
 					sout.println( "Invalid name." );
 				} else {
-					sout.println( String.format( "Your name has changed to %s.", name ) ); 
-					consoleInMsg = String.format( "%s's name has been changed to %s.", userName, name );
+					sout.println( String.format( "Your name has changed to %s.", green( name ) ) ); 
+					consoleInMsg = String.format( "%s's name has been changed to %s.", green( userName ) , red( name ) );
 					out.writeUTF( String.format( "[%s] %s", userName, consoleInMsg ) );
 					userName = name;
 				}
@@ -96,23 +122,40 @@ public class MyClientRoom {
 			}
 		}
 		
-		public void runImpl() throws Exception {
+		public void runImpl() {
 			var in = this.in ; 
 			var console = System.out;
 			
 			var svrMsg = "" ;
-			while( ! stop && ( svrMsg = in.readUTF() ) != null ) {
-				if( svrMsg.contains("\stop") ) {
+			while( ! stop ) {
+				try { 
+					svrMsg = in.readUTF();
+				} catch ( Exception e ) {
+					svrMsg = null ;
+					stop = true ; 
+				}
+						
+				if( null == svrMsg ) {					
+				} else if( svrMsg.contains("\stop") ) {
 					stop = true; 
 				}
-				console.println( svrMsg );
+				
+				if( null != svrMsg ) { 
+					console.println( svrMsg );
+				}
 			};
 		}
 	} 
 	
-	public static void main(String args[]) throws Exception {
+	public static void main(String args[]) {
+		var sout = System.out ; 
+		
 		var client = new MyClientRoom();
 		
-		client.startClient();
+		try {
+			client.startClient();
+		} catch (Exception e) {
+			sout.println( "Good bye!" );
+		}
 	}
 }
