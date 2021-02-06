@@ -1,1 +1,1 @@
-java -cp "C:\DEV\Workspace\ProgBasic\target\classes" lec.net_03_multi.MyServerMulti
+java -cp "C:\DEV\Workspace\ProgBasic\target\classes" lec.net_05_room.MyServerRoom
