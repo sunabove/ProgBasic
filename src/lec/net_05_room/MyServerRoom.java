@@ -100,7 +100,8 @@ public class MyServerRoom {
 				while( ! stop && ( clientMsg = in.readUTF() ) != null ) {
 					msgCount ++ ; 
 					sout.println( String.format( "[%03d] Message received = %s", msgCount, clientMsg ) );
-					if( clientMsg.contains("stop") ) {
+					
+					if( clientMsg.trim().equals("\\stop") ) {
 						stop = true; 
 					} else { 
 						msgList.add( clientMsg ); 
