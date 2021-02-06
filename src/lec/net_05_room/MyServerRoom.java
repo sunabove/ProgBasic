@@ -36,15 +36,18 @@ public class MyServerRoom {
 		}
 	}
 	
+	@SuppressWarnings("static-access")
 	public void startServer() throws Exception {
 		var serverSocket = new ServerSocket(3333);
 		
-		sout.println( "Waiting a client ..." );	
+		var threadId = 1 ; 
+		
+		sout.println( "".format("[%d] Waiting a client ...", threadId ) );	
+		
 		Socket socket ;
-		var threadId = 0 ; 
 		while( ( socket = serverSocket.accept() ) != null ) {
-			sout.println( "A client has been accepted." ); 
 			threadId ++ ; 
+			
 			var sendThread = new SendThread( socket, threadId ); 
 			sendThread.start();
 		} 
@@ -56,6 +59,7 @@ public class MyServerRoom {
 	
 	class SendThread extends Thread {
 		private int threadId ; 
+		
 		private DataInputStream in ; 
 		private DataOutputStream out ; 
 		
@@ -68,7 +72,7 @@ public class MyServerRoom {
 			this.in = new DataInputStream( socket.getInputStream());
 			this.out = new DataOutputStream( socket.getOutputStream());
 			
-			sout.println( String.format( "Thread[%d] created.", threadId ) ); 
+			sout.println( String.format( "Thread[%d] created.", this.threadId ) ); 
 		}
 		
 		public void stopThread() {
