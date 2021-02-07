@@ -11,7 +11,7 @@ public class ExEnum {
 		System.out.printf( "myVar = %s\n", myVar );
 
 		for(Level level : Level.values()){
-		   System.out.println(level);
+			System.out.println(level + " = " + level.ordinal());
 		}  
 
 	}
