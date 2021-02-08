@@ -29,7 +29,7 @@ public class NewtonRaphson {
 			f = f(x) ; 
 			f1 = f1(x) ;
 			
-			out.println( String.format( "[%04d] %.6f = f(%.6f)", idx, f, x ) );
+			out.println( String.format( "[%04d] f(%.9f) = %.9f", idx, x, f ) );
 			
 			x = x - f/f1 ;			
 			idx ++ ; 
