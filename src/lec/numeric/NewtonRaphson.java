@@ -43,7 +43,7 @@ public class NewtonRaphson {
 		
 		var x = newtonRaphson.solve();
 		
-		System.out.println( String.format("solution = %f", x ) );
+		System.out.println( String.format("\nsolution = %f", x ) );
 
 	}
 
