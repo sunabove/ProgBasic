@@ -17,15 +17,15 @@ public class SquareRootBabylonian {
 		
 		var idx = 0 ; 
 		
-		var xn = 0.0 ;
+		var xn = s + 1;
 		var xm = s ; 
-		while( Math.abs( xn - xm ) > epsilon ) {
+		while( xn - xm > epsilon ) {
 			idx ++ ;
 			
 			xn = xm;
 			xm = (xn + s/xn)/2.0 ; 
 			
-			out.println( String.format( "[%04d] f(%.9f) = %.9f", idx, xm, xm*xm ) );
+			out.println( String.format( "[%04d] f(%.12f) = %.12f", idx, xm, xm*xm ) );
 		} ;
 		
 		return xm ;
