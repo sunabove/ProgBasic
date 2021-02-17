@@ -38,7 +38,6 @@ public class SquareRootBabylonian {
 		var x = newtonRaphson.solve();
 		
 		System.out.println( String.format("\nSquare root of %f = %f", num, x ) );
-
 	}
 
 }
