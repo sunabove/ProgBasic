@@ -1,4 +1,4 @@
-package lec;
+package lec.exercise;
 
 import java.util.stream.IntStream;
 

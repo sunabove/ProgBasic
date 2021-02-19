@@ -1,4 +1,4 @@
-package lec;
+package lec.exercise;
 
 public class ExStrFormat {
 

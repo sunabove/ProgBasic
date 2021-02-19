@@ -1,4 +1,4 @@
-package lec;
+package lec.exercise;
 
 public class Ex7FibonacciLoop {
 
@@ -6,19 +6,20 @@ public class Ex7FibonacciLoop {
 	public static void main(String[] args) {
 		var out = System.out;
 		
-		int f0 = 1;
-		int f1 = 1;
+		int f0 = 0 ;
+		int f1 = 1 ;
 		int f;
 		
 		int lineNo = 1; 
-		while( f0 <= f1) {
-			f = f0 + f1 ; 
-			f0 = f1;
-			f1 = f;
+		do {
 			out.println( "".format( "%d, %d", lineNo, f1 ) );
 			
+			f = f0 + f1 ; 
+			f0 = f1;
+			f1 = f;			
+			
 			lineNo ++ ; 
-		}
+		} while( f0 <= f1) ; 
 	}
 
 }
